@@ -1,0 +1,6 @@
+{
+  "name": "Vaishnav Thorwat Portfolio",
+  "description": "Personal portfolio website for Vaishnav Thorwat — AI & Data Science Engineer specializing in LLM applications, multi-agent orchestration, and RAG pipelines.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
