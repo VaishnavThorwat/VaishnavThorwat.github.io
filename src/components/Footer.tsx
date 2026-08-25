@@ -22,7 +22,7 @@ export const Footer: React.FC = () => {
                 Vaishnav Thorwat
               </span>
               <span className="text-xs font-mono text-[#737373] dark:text-[#A3A3A3]">
-                AI &amp; Data Science Engineer
+                Data &amp; AI Engineer
               </span>
             </div>
           </div>
@@ -75,7 +75,7 @@ export const Footer: React.FC = () => {
           </p>
           <div className="flex items-center gap-2">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-[#171717] dark:text-[#FAFAFA]">Open to AI Engineer &amp; Agentic AI Roles</span>
+            <span className="text-[#171717] dark:text-[#FAFAFA]">Open to Data, Product Analytics &amp; Junior AI/ML Roles</span>
           </div>
         </div>
 

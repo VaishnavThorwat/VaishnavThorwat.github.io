@@ -71,7 +71,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 py-2">
           <div className="w-full border-t border-[#E5E5E5] dark:border-[#262626] flex items-center justify-between text-[10px] font-mono tracking-widest text-[#737373] dark:text-[#8A8A8A] pt-2">
             <span>03 // REPOSITORIES</span>
-            <span>AI SYSTEMS &amp; RAG PIPELINES</span>
+            <span>SELECTED PROJECT WORK</span>
           </div>
         </div>
 

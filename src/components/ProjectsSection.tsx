@@ -220,11 +220,7 @@ export const ProjectsSection: React.FC = () => {
     ? PROJECTS
     : PROJECTS.filter(p => p.category === selectedCategory);
 
-  // For continuous infinite looping ribbon when 'All' is selected
-  const marqueeProjects = [...PROJECTS, ...PROJECTS, ...PROJECTS];
-
-  const isStaticMode = selectedCategory !== 'All';
-  const effectivePaused = isPaused || isHoverPaused;
+  const isStaticMode = true;
 
   const handleScrollRibbon = (direction: 'left' | 'right') => {
     if (marqueeRef.current) {
@@ -337,10 +333,10 @@ export const ProjectsSection: React.FC = () => {
               <span className="w-4 h-[1px] bg-[#A3A3A3]" />
             </span>
             <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#171717] dark:text-[#FAFAFA] mt-1 mb-2">
-              Production <em className="italic text-[#737373] dark:text-[#A3A3A3]">AI Systems</em>
+              Selected <em className="italic text-[#737373] dark:text-[#A3A3A3]">Projects</em>
             </h2>
             <p className="text-xs font-mono text-[#737373] dark:text-[#A3A3A3]">
-              Multi-agent graphs · Dense vector indexing · Automated evaluation suites
+              Analytics foundations · Machine learning · GenAI applications
             </p>
           </div>
         </Reveal>
@@ -362,82 +358,36 @@ export const ProjectsSection: React.FC = () => {
                         : 'text-[#737373] dark:text-[#A3A3A3] hover:text-[#171717] dark:hover:text-[#FAFAFA]'
                     }`}
                   >
-                    {cat === 'All' ? 'All (Infinite Ribbon)' : cat}
+                    {cat === 'All' ? 'All Projects' : cat}
                   </button>
                 );
               })}
             </div>
 
-            {/* Ribbon Controls (Play/Pause/Scroll) - Only when in Infinite Ribbon Mode */}
-            {!isStaticMode && (
-              <div className="flex items-center gap-2">
-                <div className="hidden sm:flex items-center gap-1">
-                  <button
-                    onClick={() => handleScrollRibbon('left')}
-                    className="p-2 rounded-full border border-[#E5E5E5] dark:border-[#262626] bg-[#F5F5F5] dark:bg-[#171717] text-[#171717] dark:text-[#FAFAFA] hover:bg-[#E5E5E5] dark:hover:bg-[#262626] cursor-pointer"
-                    title="Scroll Ribbon Left"
-                  >
-                    <ChevronLeft className="w-3.5 h-3.5" />
-                  </button>
-                  <button
-                    onClick={() => handleScrollRibbon('right')}
-                    className="p-2 rounded-full border border-[#E5E5E5] dark:border-[#262626] bg-[#F5F5F5] dark:bg-[#171717] text-[#171717] dark:text-[#FAFAFA] hover:bg-[#E5E5E5] dark:hover:bg-[#262626] cursor-pointer"
-                    title="Scroll Ribbon Right"
-                  >
-                    <ChevronRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-
-                <button
-                  onClick={() => setIsPaused(!isPaused)}
-                  className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full border border-[#E5E5E5] dark:border-[#262626] bg-[#F5F5F5] dark:bg-[#171717] text-xs font-mono text-[#171717] dark:text-[#FAFAFA] hover:bg-[#E5E5E5] dark:hover:bg-[#262626] cursor-pointer"
-                  title={isPaused ? "Resume Auto Scroll" : "Pause Auto Scroll"}
-                >
-                  {isPaused ? <Play className="w-3.5 h-3.5 text-[#A3A3A3]" /> : <Pause className="w-3.5 h-3.5 text-[#A3A3A3]" />}
-                  <span>{isPaused ? 'Resume' : 'Pause'}</span>
-                </button>
-              </div>
-            )}
+            <span className="text-xs font-mono text-[#737373] dark:text-[#A3A3A3] hidden sm:block">
+              Select a category to inspect the work
+            </span>
           </div>
         </Reveal>
 
       </div>
 
-      {/* Ribbon Display Mode (When 'All' selected -> Infinite Loop Ribbon; When Category selected -> Static Cards) */}
-      {!isStaticMode ? (
-        <div className="relative w-full py-1 overflow-hidden">
-          <div className="absolute left-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-r from-[#FAFAFA] dark:from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-32 bg-gradient-to-l from-[#FAFAFA] dark:from-[#0A0A0A] to-transparent z-10 pointer-events-none" />
-
-          <div
-            ref={marqueeRef}
-            onMouseEnter={() => setIsHoverPaused(true)}
-            onMouseLeave={() => setIsHoverPaused(false)}
-            className="overflow-x-auto scrollbar-none py-2"
-          >
-            <div
-              className={`animate-marquee gap-6 sm:gap-8 px-4 ${
-                effectivePaused ? 'marquee-paused' : ''
-              }`}
-            >
-              {marqueeProjects.map((project, idx) =>
-                renderProjectCard(project, `infinite-${idx}`)
-              )}
-            </div>
-          </div>
-        </div>
-      ) : (
-        /* Static Grid View when specific category selected */
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full py-2">
+      {/* Stable grid: every project remains visible and scannable without animation. */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 w-full py-2">
+        {filteredProjects.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredProjects.map((project, idx) => (
               <Reveal key={project.id} delay={idx * 80}>
-                {renderProjectCard(project, 'static-cat', 'w-full')}
+                {renderProjectCard(project, 'project-grid', 'w-full')}
               </Reveal>
             ))}
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="rounded-2xl border border-dashed border-[#D4D4D4] dark:border-[#373737] p-8 text-center text-sm text-[#737373] dark:text-[#A3A3A3]">
+            This section is being developed. Please return soon for the next case study.
+          </div>
+        )}
+      </div>
 
       {/* Project Details Modal */}
       <AnimatePresence>

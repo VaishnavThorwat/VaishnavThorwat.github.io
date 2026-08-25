@@ -22,11 +22,11 @@ export const ContactSection: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
-    
+
+    const subject = encodeURIComponent(formData.subject || 'Portfolio enquiry');
+    const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`);
+    window.location.href = `mailto:${PERSONAL_INFO.email}?subject=${subject}&body=${body}`;
     setFormSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', subject: '', message: '' });
-    }, 4000);
   };
 
   return (
@@ -64,7 +64,7 @@ export const ContactSection: React.FC = () => {
                   Primary Contact
                 </span>
                 <h3 className="font-serif text-2xl font-light text-[#171717] dark:text-[#FAFAFA] mb-3">
-                  Let's Build Something Impactful
+                  Let's work on the right problem
                 </h3>
 
                 <div className="flex items-center gap-2 p-2 rounded-full bg-[#FFFFFF] dark:bg-[#0A0A0A] border border-[#E5E5E5] dark:border-[#262626] mb-1">
@@ -164,17 +164,17 @@ export const ContactSection: React.FC = () => {
                   Send a Direct Message
                 </h3>
                 <p className="text-xs font-mono text-[#737373] dark:text-[#A3A3A3] mb-4">
-                  Have an AI project or technical opportunity? Send a note below.
+                  Hiring for analytics, product, or junior AI/ML work? Send a note below; the form opens your email client and does not store submissions.
                 </p>
 
                 {formSubmitted ? (
                   <div className="p-6 bg-[#FFFFFF] dark:bg-[#0A0A0A] rounded-xl border border-[#E5E5E5] dark:border-[#262626] text-center space-y-2">
                     <Sparkles className="w-6 h-6 text-[#171717] dark:text-[#FAFAFA] mx-auto" />
                     <h4 className="font-serif text-xl text-[#171717] dark:text-[#FAFAFA]">
-                      Message Sent!
+                      Email Draft Opened
                     </h4>
                     <p className="text-xs font-mono text-[#737373] dark:text-[#A3A3A3]">
-                      Thank you for connecting, {formData.name || 'friend'}. I will review your message and reply via email shortly.
+                      Your email client should open with a draft addressed to {PERSONAL_INFO.email}. If it does not, please email me directly.
                     </p>
                   </div>
                 ) : (
@@ -215,7 +215,7 @@ export const ContactSection: React.FC = () => {
                       </label>
                       <input
                         type="text"
-                        placeholder="e.g. AI Engineer Opportunity"
+                        placeholder="e.g. Data Analyst or AI/ML opportunity"
                         value={formData.subject}
                         onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                         className="w-full px-3.5 py-2 rounded-xl border border-[#E5E5E5] dark:border-[#262626] bg-[#FFFFFF] dark:bg-[#0A0A0A] text-[#171717] dark:text-[#FAFAFA] placeholder:text-[#737373] dark:placeholder:text-[#A3A3A3] focus:outline-none focus:border-[#A3A3A3]"

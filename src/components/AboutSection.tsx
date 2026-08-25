@@ -17,11 +17,11 @@ export const AboutSection: React.FC = () => {
                 About Me
               </span>
               <h2 className="font-serif text-4xl sm:text-5xl font-light text-[#171717] dark:text-[#FAFAFA]">
-                Building the <em className="italic text-[#737373] dark:text-[#A3A3A3]">Intelligent</em> Frontier
+                From data to <em className="italic text-[#737373] dark:text-[#A3A3A3]">intelligent</em> products
               </h2>
             </div>
             <p className="text-xs font-mono text-[#525252] dark:text-[#A3A3A3] max-w-md uppercase tracking-wider">
-              GenAI · RAG Pipelines · Agentic Systems · NLP · Data Science
+              Analytics · Product Thinking · Machine Learning · GenAI
             </p>
           </div>
         </Reveal>
@@ -39,16 +39,16 @@ export const AboutSection: React.FC = () => {
                 
                 <div className="space-y-3 text-xs sm:text-sm font-light text-[#404040] dark:text-[#D4D4D4] leading-relaxed">
                   <p>
-                    I'm Vaishnav — a 23-year-old AI engineer from Navi Mumbai, freshly graduated with a B.E. in Artificial Intelligence &amp; Data Science from Terna Engineering College, Mumbai University (Class of 2025).
+                    I'm Vaishnav, a 2025 Artificial Intelligence &amp; Data Science graduate from Navi Mumbai with internship experience in data analysis and data science.
                   </p>
                   <p>
-                    I build GenAI systems — from dual-index RAG pipelines and multi-agent CrewAI workflows to n8n automation engines and deep learning NLP models. My work spans data analysis, automated code reviewers, and hackathon builds shipping AI solutions in 48 hours.
+                    My current work spans data exploration, machine-learning experiments, NLP, retrieval-augmented generation, multi-agent workflows, and LLM evaluation. I am looking for analytical or junior AI/ML roles where I can contribute immediately and grow toward reliable production systems.
                   </p>
                 </div>
 
                 {/* Core Tag Pills */}
                 <div className="mt-5 pt-4 border-t border-[#E5E5E5] dark:border-[#262626] flex flex-wrap gap-2">
-                  {['Generative AI', 'RAG Pipelines', 'Agentic AI', 'NLP', 'Data Science', 'n8n Automation'].map((tag, i) => (
+                  {['Data Analysis', 'Product Metrics', 'Machine Learning', 'NLP', 'RAG Applications', 'LLM Evaluation'].map((tag, i) => (
                     <span key={i} className="text-[10px] font-mono uppercase tracking-wider px-3 py-1 rounded-full border border-[#D4D4D4] dark:border-[#373737] text-[#171717] dark:text-[#FAFAFA] bg-[#FFFFFF] dark:bg-[#262626]">
                       {tag}
                     </span>
