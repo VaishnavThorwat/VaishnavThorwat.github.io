@@ -1,7 +1,7 @@
 export interface Project {
   id: string;
   title: string;
-  category: 'Analytics' | 'Product' | 'Agents' | 'RAG' | 'Eval & Testing' | 'Deep Learning';
+  category: 'Agents' | 'RAG' | 'Eval & Testing' | 'Deep Learning';
   subtitle: string;
   description: string;
   techStack: string[];
@@ -16,7 +16,7 @@ export interface Project {
 export interface SkillCategory {
   title: string;
   iconName: string;
-  skills: { name: string; level?: 'Expert' | 'Advanced' | 'Proficient' | 'Working Knowledge'; tag?: string }[];
+  skills: { name: string; level?: 'Expert' | 'Advanced' | 'Proficient'; tag?: string }[];
 }
 
 export interface ExperienceItem {

@@ -10,9 +10,7 @@ import {
   Search,
   Sparkles,
   ArrowUpRight,
-  Layers,
-  BarChart3,
-  TrendingUp
+  Layers
 } from 'lucide-react';
 import { Reveal } from './Reveal';
 import { MagneticButton } from './MagneticButton';
@@ -51,86 +49,94 @@ interface SkillCategory {
 
 export const SKILL_CATEGORIES_DATA: SkillCategory[] = [
   {
-    id: 'analytics-bi',
+    id: 'llm-agents',
     indexNumber: '01',
-    title: 'Analytics & BI.',
-    headlineTitle: 'Analytics & Business Intelligence',
-    subtitle: 'Immediate Employment Focus',
-    iconName: 'BarChart3',
-    description: 'Using SQL, Python, pandas, and Power BI to clean data, explore patterns, build dashboards, and communicate findings that support practical decisions.',
+    title: 'LLM & Multi-Agent Orchestration.',
+    headlineTitle: 'LLM & Multi-Agent Systems',
+    subtitle: 'Core Focus / Active Domain',
+    iconName: 'Bot',
+    description:
+      'Engineering state-of-the-art autonomous multi-agent workflows with CrewAI, LlamaIndex, and LangChain. Specialized in prompt engineering, context window optimization, and sub-second inference using Gemini 2.0 Flash, Groq LLaMA 3.3 70B, and OpenAI models.',
     skills: [
-      { name: 'SQL', level: 'Advanced', tag: 'CORE' },
-      { name: 'Power BI', level: 'Proficient', tag: 'DASHBOARDS' },
-      { name: 'Python', level: 'Advanced', tag: 'ANALYSIS' },
-      { name: 'Pandas', level: 'Advanced', tag: 'WRANGLING' },
-      { name: 'Exploratory Data Analysis', level: 'Advanced' },
-      { name: 'Data Storytelling', level: 'Proficient' },
-    ],
-  },
-  {
-    id: 'product-analysis',
-    indexNumber: '02',
-    title: 'Product & Decision Analysis.',
-    headlineTitle: 'Product & Decision Analysis',
-    subtitle: 'Business and User Reasoning',
-    iconName: 'TrendingUp',
-    description: 'Building the habit of connecting metrics to user behavior and business questions through KPI definition, segmentation, hypothesis testing, and recommendation writing.',
-    skills: [
-      { name: 'KPI Definition', level: 'Proficient', tag: 'FOUNDATION' },
-      { name: 'Funnel Analysis', level: 'Proficient' },
-      { name: 'Segmentation', level: 'Proficient' },
-      { name: 'Hypothesis Testing', level: 'Proficient' },
-      { name: 'Root-Cause Analysis', level: 'Proficient' },
+      { name: 'LangChain', level: 'Expert', tag: 'CORE' },
+      { name: 'LlamaIndex', level: 'Expert', tag: 'CORE' },
+      { name: 'CrewAI', level: 'Advanced', tag: 'MULTI-AGENT' },
+      { name: 'OpenAI API', level: 'Advanced' },
+      { name: 'Gemini 2.0 / 2.5', level: 'Advanced', tag: 'FAST LLM' },
+      { name: 'Groq / LLaMA 3.3 70B', level: 'Advanced', tag: 'LOW LATENCY' },
+      { name: 'LiteLLM', level: 'Proficient' },
+      { name: 'Ollama', level: 'Proficient' },
+      { name: 'Prompt Engineering', level: 'Expert', tag: 'PATTERNS' },
     ],
   },
   {
     id: 'ml-dl',
-    indexNumber: '03',
-    title: 'Machine Learning & NLP.',
-    headlineTitle: 'Machine Learning & NLP',
-    subtitle: 'Long-Term Technical Direction',
+    indexNumber: '02',
+    title: 'Machine Learning & Deep Learning.',
+    headlineTitle: 'Machine Learning & Deep Learning',
+    subtitle: 'Neural Networks & NLP',
     iconName: 'BrainCircuit',
-    description: 'Developing machine-learning foundations through supervised learning, feature engineering, model evaluation, neural networks, and natural-language processing projects.',
+    description:
+      'Designing and training custom neural network architectures including hybrid CNN-BiLSTM text classifiers for toxic content detection. Experienced in feature engineering, sentiment analysis, and transformer fine-tuning.',
     skills: [
-      { name: 'scikit-learn', level: 'Advanced', tag: 'MODELING' },
       { name: 'TensorFlow', level: 'Advanced' },
       { name: 'Keras', level: 'Advanced' },
-      { name: 'Hugging Face Transformers', level: 'Proficient', tag: 'NLP' },
-      { name: 'Model Evaluation', level: 'Proficient' },
+      { name: 'scikit-learn', level: 'Advanced', tag: 'MODELS' },
+      { name: 'Hugging Face Transformers', level: 'Advanced', tag: 'NLP' },
+      { name: 'NLTK', level: 'Proficient' },
     ],
   },
   {
-    id: 'llm-agents',
+    id: 'data-vector',
+    indexNumber: '03',
+    title: 'Data & Vector Engines.',
+    headlineTitle: 'Data & Vector Retrieval',
+    subtitle: 'High-Density RAG Indexing',
+    iconName: 'Database',
+    description:
+      'Architecting high-density vector indices and hybrid semantic-keyword retrieval systems with FAISS and ChromaDB. Optimized for minimal token bloat, zero hallucination rates, and rapid document chunk embedding.',
+    skills: [
+      { name: 'FAISS', level: 'Advanced', tag: 'VECTOR DB' },
+      { name: 'ChromaDB', level: 'Advanced', tag: 'VECTOR DB' },
+      { name: 'Vector Embeddings', level: 'Expert' },
+      { name: 'TF-IDF & BM25', level: 'Proficient' },
+      { name: 'Pandas', level: 'Expert' },
+      { name: 'NumPy', level: 'Expert' },
+    ],
+  },
+  {
+    id: 'testing-eval',
     indexNumber: '04',
-    title: 'RAG, Agents & LLM Apps.',
-    headlineTitle: 'RAG, Agents & LLM Applications',
-    subtitle: 'Applied GenAI Projects',
-    iconName: 'Bot',
-    description: 'Building applied GenAI projects with retrieval, multi-agent workflows, API integrations, and evaluation rather than presenting these tools as isolated buzzwords.',
+    title: 'Testing & LLM Evaluation.',
+    headlineTitle: 'Testing & LLM Evaluation',
+    subtitle: 'Automated QA & Metric Suites',
+    iconName: 'CheckCircle2',
+    description:
+      'Eliminating model hallucinations and guaranteeing deterministic behavior with automated LLM test suites. Utilizing DeepEval and pytest to continuously measure answer faithfulness, context relevance, and tone compliance.',
     skills: [
-      { name: 'LangChain', level: 'Proficient', tag: 'CORE' },
-      { name: 'LlamaIndex', level: 'Proficient', tag: 'RAG' },
-      { name: 'CrewAI', level: 'Proficient', tag: 'AGENTS' },
-      { name: 'FAISS', level: 'Proficient' },
-      { name: 'OpenAI / Gemini APIs', level: 'Proficient' },
-      { name: 'Prompt Engineering', level: 'Proficient' },
+      { name: 'pytest', level: 'Advanced', tag: 'AUTOMATION' },
+      { name: 'DeepEval', level: 'Advanced', tag: 'EVAL SUITE' },
+      { name: 'Faithfulness Metrics', level: 'Expert' },
+      { name: 'Relevancy Benchmarks', level: 'Expert' },
     ],
   },
   {
-    id: 'testing-delivery',
+    id: 'languages-devops',
     indexNumber: '05',
-    title: 'Testing & Delivery.',
-    headlineTitle: 'Testing & Delivery',
-    subtitle: 'Making Projects Inspectable',
-    iconName: 'CheckCircle2',
-    description: 'Adding tests, evaluation suites, lightweight APIs, dashboards, version control, and deployment foundations so project work is easier to inspect and improve.',
+    title: 'Programming Languages & Backend.',
+    headlineTitle: 'Languages & Microservices',
+    subtitle: 'Production Infrastructure',
+    iconName: 'Code2',
+    description:
+      'Developing robust, concurrent REST endpoints with FastAPI and Python. Implementing containerized microservice deployments with Docker, relational database schema design, and interactive UI dashboards with Streamlit.',
     skills: [
-      { name: 'pytest', level: 'Proficient', tag: 'TESTING' },
-      { name: 'DeepEval', level: 'Proficient', tag: 'LLM EVAL' },
-      { name: 'FastAPI', level: 'Proficient' },
-      { name: 'Streamlit', level: 'Proficient' },
-      { name: 'Docker', level: 'Working Knowledge' },
+      { name: 'Python', level: 'Expert', tag: 'PRIMARY' },
+      { name: 'SQL', level: 'Advanced' },
+      { name: 'FastAPI', level: 'Advanced', tag: 'BACKEND' },
+      { name: 'Docker', level: 'Proficient', tag: 'DEPLOYMENT' },
+      { name: 'Streamlit', level: 'Advanced', tag: 'UI DASHBOARD' },
       { name: 'Git & GitHub', level: 'Advanced' },
+      { name: 'Jupyter Notebooks', level: 'Expert' },
     ],
   },
 ];
@@ -143,10 +149,6 @@ export const SkillsSection: React.FC = () => {
     switch (iconName) {
       case 'Code2':
         return <Code2 className="w-5 h-5 text-[#FAFAFA]" />;
-      case 'BarChart3':
-        return <BarChart3 className="w-5 h-5 text-[#FAFAFA]" />;
-      case 'TrendingUp':
-        return <TrendingUp className="w-5 h-5 text-[#FAFAFA]" />;
       case 'Bot':
         return <Bot className="w-5 h-5 text-[#FAFAFA]" />;
       case 'BrainCircuit':

@@ -31,7 +31,7 @@ ${CERTIFICATIONS.map(c => `${c.title} — ${c.issuer} (${c.date})`).join('\n')}
 TECHNICAL SKILLS
 ${SKILL_CATEGORIES.map(cat => `- ${cat.title}: ${cat.skills.map(s => s.name).join(', ')}`).join('\n')}
 
-SELECTED PROJECTS
+FEATURED PROJECTS
 ${PROJECTS.map(p => `• ${p.title} (${p.techStack.join(', ')}):\n  ${p.highlights.join('\n  ')}`).join('\n\n')}
 
 WORK EXPERIENCE
@@ -138,7 +138,7 @@ ${EXPERIENCES.map(e => `• ${e.role} @ ${e.company} (${e.period}):\n  ${e.highl
           {/* Featured Projects */}
           <div>
             <h2 className="text-xs font-mono uppercase tracking-widest text-[#737373] dark:text-[#A3A3A3] border-b border-[#E5E5E5] dark:border-[#262626] pb-1 mb-3">
-              Selected Projects
+              Key GenAI Systems
             </h2>
             <div className="space-y-4">
               {PROJECTS.map((p) => (

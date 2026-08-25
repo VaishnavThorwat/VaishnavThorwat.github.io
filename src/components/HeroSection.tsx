@@ -8,7 +8,12 @@ interface HeroSectionProps {
   openResumeModal: () => void;
 }
 
-const ROLE_TITLES = ["Data & AI Engineer"];
+const ROLE_TITLES = [
+  "LLM & Multi-Agent Systems Engineer",
+  "Autonomous AI Agents Specialist",
+  "RAG & Dense Vector Search Architect",
+  "AI Systems Evaluation & Benchmarking Expert"
+];
 
 export const HeroSection: React.FC<HeroSectionProps> = ({ openResumeModal }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
@@ -76,7 +81,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ openResumeModal }) => 
           <div className="flex items-center gap-3">
             <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#171717] border border-[#262626] text-[#FAFAFA]">
               <span className="w-2 h-2 rounded-full bg-[#FAFAFA] animate-pulse" />
-              <span>Analytics · Machine Learning · GenAI</span>
+              <span>AI Systems Architecture</span>
             </span>
             <span className="hidden sm:inline-block text-[#737373]">·</span>
             <span className="hidden sm:inline-block text-[#A3A3A3]">Mumbai, India</span>
@@ -94,7 +99,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ openResumeModal }) => 
           {/* Eyebrow Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#171717] border border-[#262626] text-xs font-mono uppercase tracking-widest text-[#FAFAFA] shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-[#FAFAFA]" />
-            <span>Data &amp; AI Engineer</span>
+            <span>Agentic AI &amp; GenAI Engineer</span>
           </div>
 
           {/* Headline Name - Staggered reveal on load */}
@@ -153,7 +158,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ openResumeModal }) => 
 
           {/* Objective Summary - Centered */}
           <p className="text-sm sm:text-base md:text-lg text-[#D4D4D4] font-sans leading-relaxed font-light max-w-2xl mx-auto">
-            Using Python, SQL, and machine learning to turn data into useful decisions and intelligent products. Building toward reliable AI/ML engineering through hands-on work in NLP, RAG, agents, and evaluation.
+            Building autonomous multi-agent systems, dense vector search RAG pipelines, and automated LLM evaluation suites — engineering production-ready AI solutions end-to-end.
           </p>
 
           {/* Action Buttons - Centered */}
